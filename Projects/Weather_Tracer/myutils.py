@@ -1,9 +1,10 @@
 import os
 import pandas as pd
 from openai import OpenAI
+import streamlit as st
 
 CSV_FILE = "weather_data.csv"
-
+open_api_key =st.secrets.get(("OPENROUTER_API_KEY"), os.getenv("OPENROUTER_API_KEY"))
 def load_weather_data():
     """Load weather data from CSV or create file if missing."""
     if os.path.exists(CSV_FILE):
@@ -98,7 +99,7 @@ def generate_ai_summary(api_key):
     try:
         client = OpenAI(
             base_url="https://openrouter.ai/api/v1",
-            api_key=api_key
+            api_key=open_api_key
         )
         completion = client.chat.completions.create(
             model="cohere/north-mini-code:free",

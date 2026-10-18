@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ali Alsahlawi | Electrical Engineer &amp; Data Scientist</title>
+<meta name="description" content="Ali Alsahlawi is an Electrical Engineer transitioning into Data Science, combining power systems expertise with predictive analytics, machine learning models and interactive tools.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ali Alsahlawi | Electrical Engineer &amp; Data Scientist">
+<meta property="og:description" content="Bridging hardware engineering with data science to build analytical models and smart systems that improve real-world infrastructure.">
+<meta name="theme-color" content="#121A26">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#121A26; --panel:#1E2632; --text:#E6EBF2; --muted:#AEB8C6; --accent:#8FD3F4; --rule:#34404F; --grid:rgba(174,184,198,.06); --onaccent:#121A26;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+:root[data-theme="light"]{
+  --bg:#F3F5F8; --panel:#E4E9F0; --text:#141C28; --muted:#4A5567; --accent:#0A5A82; --rule:#B9C3D0; --grid:rgba(20,28,40,.06); --onaccent:#F3F5F8;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:110px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 var(--sans);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:48px 48px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono);font-size:.875rem;letter-spacing:.02em}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--onaccent);padding:8px 12px;z-index:20}
+.skip:focus{left:8px}
+
+/* header */
+header.top{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--rule)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
+.brand{font-family:var(--mono);font-weight:500;color:var(--text);text-decoration:none;letter-spacing:.04em}
+.brand span{color:var(--accent)}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:22px}
+nav a{font-family:var(--mono);font-size:.875rem;color:var(--muted);text-decoration:none;padding:6px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover{color:var(--text);border-color:var(--accent)}
+.theme{font:500 .875rem var(--mono);color:var(--text);background:transparent;border:1px solid var(--rule);padding:7px 12px;cursor:pointer;transition:border-color .2s,color .2s}
+.theme:hover{border-color:var(--accent);color:var(--accent)}
+@media (max-width:820px){
+  .bar{flex-wrap:wrap}
+  nav{order:3;width:100%;overflow-x:auto;margin:0 -24px;padding:0 24px}
+  nav ul{gap:20px;white-space:nowrap}
+}
+
+/* hero */
+.hero{padding:96px 0 88px;border-bottom:1px solid var(--rule)}
+.prompt{color:var(--accent);margin:0 0 28px}
+.prompt .cur{display:inline-block;width:.6em;height:1.05em;background:var(--accent);vertical-align:-.18em;margin-left:4px}
+@media (prefers-reduced-motion:no-preference){.prompt .cur{animation:blink 1.2s steps(1) infinite}}
+@keyframes blink{50%{opacity:0}}
+h1{font:400 clamp(2.6rem,7.2vw,5.6rem)/1.02 var(--serif);letter-spacing:-.02em;margin:0 0 24px;max-width:15ch}
+.role{font-family:var(--mono);color:var(--muted);margin:0 0 20px}
+.statement{font-size:1.25rem;max-width:40em;margin:0 0 40px}
+.btn{display:inline-block;font:500 1rem var(--mono);text-decoration:none;padding:14px 22px;border:1px solid var(--accent);color:var(--accent);transition:background .2s,color .2s}
+.btn:hover{background:var(--accent);color:var(--onaccent)}
+.btn.ghost{border-color:var(--rule);color:var(--text);padding:10px 16px;font-size:.9rem}
+.btn.ghost:hover{border-color:var(--accent);background:transparent;color:var(--accent)}
+
+/* sections */
+section.s{padding:84px 0;border-bottom:1px solid var(--rule)}
+.row{display:grid;grid-template-columns:200px 1fr;gap:40px}
+.label{font-family:var(--mono);font-size:.875rem;color:var(--accent);margin:6px 0 0;text-transform:uppercase;letter-spacing:.08em}
+h2{font:400 clamp(1.8rem,3.4vw,2.5rem)/1.15 var(--serif);margin:0 0 28px;letter-spacing:-.01em}
+h3{font:500 1.35rem/1.3 var(--serif);margin:0 0 4px}
+p{margin:0 0 1em}
+@media (max-width:820px){.row{grid-template-columns:1fr;gap:10px}section.s{padding:64px 0}.hero{padding:64px 0}}
+
+/* signature: bridge */
+.bridge-intro{max-width:44em;color:var(--muted);margin-bottom:44px}
+.bridge{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.bridge li{position:relative;padding:40px 22px 0 0}
+.bridge li::before{content:"";position:absolute;top:10px;left:0;right:0;height:2px;background:var(--muted)}
+.bridge li::after{content:"";position:absolute;top:2px;left:0;width:18px;height:18px;background:var(--bg);border:2px solid var(--muted);border-radius:50%}
+.bridge li.ds::before{background:none;border-top:2px dashed var(--accent);height:0}
+.bridge li.ds::after{border-color:var(--accent);background:var(--accent)}
+.bridge li:last-child::before{right:40%}
+.tag{font-family:var(--mono);font-size:.8125rem;color:var(--muted);display:block;margin-bottom:6px}
+.ds .tag{color:var(--accent)}
+.bridge h3{font-size:1.2rem}
+.bridge p{font-size:1rem;color:var(--muted);margin:8px 0 0}
+.lanes{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.8125rem;color:var(--muted);margin-bottom:10px}
+.lanes .e{color:var(--text)} .lanes .d{color:var(--accent)}
+@media (max-width:820px){
+  .lanes{display:none}
+  .bridge{grid-template-columns:1fr}
+  .bridge li{padding:0 0 34px 40px}
+  .bridge li::before{top:18px;bottom:-18px;left:8px;right:auto;width:2px;height:auto}
+  .bridge li.ds::before{border-top:0;border-left:2px dashed var(--accent);width:0;height:auto;top:-16px;bottom:auto;height:34px;left:8px}
+  .bridge li:last-child::before{right:auto}
+  .bridge li:first-child::before{top:18px}
+  .bridge li::after{top:4px;left:0}
+  .bridge li:last-child{padding-bottom:0}
+}
+
+/* experience / lists */
+.item{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--rule)}
+.item:first-of-type{border-top:0;padding-top:0}
+.when{font-family:var(--mono);font-size:.875rem;color:var(--muted);padding-top:5px}
+.org{color:var(--muted);margin:0 0 12px}
+.item ul{margin:0;padding-left:1.1em}
+.item li{margin-bottom:.4em}
+@media (max-width:820px){.item{grid-template-columns:1fr;gap:4px}}
+
+.skills{margin:0}
+.skills div{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--rule)}
+.skills div:first-child{border-top:0;padding-top:0}
+.skills dt{font-family:var(--mono);font-size:.875rem;color:var(--accent)}
+.skills dd{margin:0}
+@media (max-width:820px){.skills div{grid-template-columns:1fr;gap:2px}}
+
+.tools{font-family:var(--mono);font-size:.875rem;color:var(--muted);margin:0 0 18px}
+.proj{padding:30px 0;border-top:1px solid var(--rule)}
+.proj:first-of-type{border-top:0;padding-top:0}
+
+.edu{list-style:none;margin:0;padding:0}
+.edu li{padding:16px 0;border-top:1px solid var(--rule)}
+.edu li:first-child{border-top:0;padding-top:0}
+.edu .k{font-family:var(--mono);font-size:.8125rem;color:var(--muted);display:block}
+
+.contact a.big{font:400 clamp(1.3rem,3.6vw,2.1rem)/1.3 var(--serif);word-break:break-word}
+.links{list-style:none;padding:0;margin:26px 0 0;display:flex;gap:12px;flex-wrap:wrap}
+footer{padding:36px 0 48px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Ali Alsahlawi, back to top">AJA<span>_</span>Alsahlawi</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#bridge">Bridge</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-pressed="false" aria-label="Switch to light mode">Light</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="name">
+    <div class="wrap">
+      <p class="prompt mono" aria-hidden="true">&gt; bridge(electrical_engineering, data_science)<span class="cur"></span></p>
+      <h1 id="name">Ali Jameel Ahmed Alsahlawi</h1>
+      <p class="role">Electrical Engineer &amp; Data Scientist</p>
+      <p class="statement">Bridging hardware engineering with data science to build analytical models and smart systems that improve real-world infrastructure.</p>
+      <a class="btn" href="#projects">View my work</a>
+    </div>
+  </section>
+
+  <section class="s" id="bridge" aria-labelledby="bridge-h">
+    <div class="wrap">
+      <div class="row">
+        <p class="label">Schematic</p>
+        <div>
+          <h2 id="bridge-h">From power systems to predictive models</h2>
+          <p class="bridge-intro">The path so far, traced from hardware foundations to data science. The dashed segment marks the crossing.</p>
+        </div>
+      </div>
+      <div class="lanes" aria-hidden="true"><span class="e">Electrical engineering</span><span class="d">Data science</span></div>
+      <ol class="bridge">
+        <li>
+          <span class="tag">Foundation</span>
+          <h3>B.Sc. Electrical Engineering</h3>
+          <p>University of Bahrain, alongside the Electrical Insulation Wireman License.</p>
+        </li>
+        <li>
+          <span class="tag">2023 – 2024</span>
+          <h3>Smart DC/DC wall plug</h3>
+          <p>Prototype for DC houses, validated through quantitative data analysis of hardware performance.</p>
+        </li>
+        <li>
+          <span class="tag">Jul – Aug 2024</span>
+          <h3>Ministry of Works</h3>
+          <p>Schematics, bills of quantities and single line diagrams for public facilities.</p>
+        </li>
+        <li class="ds">
+          <span class="tag">Sep – Nov 2026</span>
+          <h3>Data Science Bootcamp</h3>
+          <p>General Assembly. Analytics models, wind turbine analysis and a Streamlit weather app.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="s" id="about" aria-labelledby="about-h">
+    <div class="wrap row">
+      <p class="label">About</p>
+      <div>
+        <h2 id="about-h">Hardware first, then data</h2>
+        <p>I am an Electrical Engineer transitioning into Data Science. My focus is combining power systems expertise with predictive analytics, machine learning models and interactive tools, so that engineering decisions rest on evidence as well as design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="experience" aria-labelledby="exp-h">
+    <div class="wrap row">
+      <p class="label">Experience</p>
+      <div>
+        <h2 id="exp-h">Where I have worked</h2>
+
+        <article class="item">
+          <div class="when">Sep 2026 – Nov 2026</div>
+          <div>
+            <h3>Data Science Bootcamp Student</h3>
+            <p class="org">General Assembly</p>
+            <p>Developed analytics models.</p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="when">Jul 2024 – Aug 2024</div>
+          <div>
+            <h3>Electrical Engineer Trainee</h3>
+            <p class="org">Ministry of Works, Building Maintenance Directorate, Bahrain</p>
+            <ul>
+              <li>Inspected government building facilities.</li>
+              <li>Created AutoCAD schematics for replacing outdated electrical components.</li>
+              <li>Developed Bills of Quantities (BOQ) for electrical hardware to ensure accurate procurement and cost estimations.</li>
+              <li>Supervised Distribution Board (DB) installations, main panels and sub-panels, and executed system safety verification tests.</li>
+              <li>Constructed Single Line Diagrams (SLD) to standardize electrical architecture and documentation across public facilities.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="when">2023 – 2024</div>
+          <div>
+            <h3>Senior Project Developer</h3>
+            <p class="org">University of Bahrain</p>
+            <p>Architected and built a smart DC/DC wall plug prototype for DC houses, covering requirements analysis, PCB layout design and prototyping. Selected circuit components, captured schematics in EAGLE and MULTISIM, and carried out quantitative data analysis to validate hardware performance.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="skills" aria-labelledby="skills-h">
+    <div class="wrap row">
+      <p class="label">Skills</p>
+      <div>
+        <h2 id="skills-h">Tools of the trade</h2>
+        <dl class="skills">
+          <div><dt>Programming</dt><dd>Python, C++, SQL, MATLAB</dd></div>
+          <div><dt>Data and machine learning</dt><dd>pandas, Streamlit, Machine Learning</dd></div>
+          <div><dt>Electrical and hardware</dt><dd>Power Systems Analysis, AutoCAD, EAGLE, MULTISIM</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="projects" aria-labelledby="proj-h">
+    <div class="wrap row">
+      <p class="label">Projects</p>
+      <div>
+        <h2 id="proj-h">Selected work</h2>
+
+        <article class="proj">
+          <h3>US Wind Turbine Data Analysis</h3>
+          <p class="tools">Python · pandas</p>
+          <p>Cleaned and analyzed US wind turbine data to deliver strategic recommendations on capacity, manufacturers and geographic distributions.</p>
+          <a class="btn ghost" href="https://github.com/ali22j/DSB3/tree/master/Projects/Wind_Turbines" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+
+        <article class="proj">
+          <h3>Weather Tracker App</h3>
+          <p class="tools">Streamlit · pandas · Python · OpenRouter API</p>
+          <p>Built an interactive Streamlit weather application featuring CSV data persistence, CRUD operations and recommendations from the OpenRouter LLM API.</p>
+          <a class="btn ghost" href="https://github.com/ali22j/DSB3/tree/master/Projects/Weather_Tracer" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="education" aria-labelledby="edu-h">
+    <div class="wrap row">
+      <p class="label">Education</p>
+      <div>
+        <h2 id="edu-h">Education and certifications</h2>
+        <ul class="edu">
+          <li><span class="k">Degree</span>B.Sc. in Electrical Engineering, University of Bahrain</li>
+          <li><span class="k">Bootcamp</span>General Assembly Data Science Bootcamp</li>
+          <li><span class="k">Licence</span>Electrical Insulation Wireman License</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="s" id="contact" aria-labelledby="contact-h">
+    <div class="wrap row">
+      <p class="label">Contact</p>
+      <div class="contact">
+        <h2 id="contact-h">Get in touch</h2>
+        <p><a class="big" href="mailto:ali22j2002@gmail.com">ali22j2002@gmail.com</a></p>
+        <ul class="links">
+          <li><a class="btn ghost" href="https://www.linkedin.com/in/ali-alsahlawi-32214a346/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a class="btn ghost" href="https://github.com/ali22j/DSB3/tree/master/Projects" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Ali Jameel Ahmed Alsahlawi</span>
+    <span class="mono">&copy; <span id="year">2026</span></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  var saved=null;
+  try{saved=localStorage.getItem('theme');}catch(e){}
+  var prefersLight=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches;
+  function apply(t){
+    root.setAttribute('data-theme',t);
+    var light=t==='light';
+    btn.textContent=light?'Dark':'Light';
+    btn.setAttribute('aria-pressed',light?'true':'false');
+    btn.setAttribute('aria-label',light?'Switch to dark mode':'Switch to light mode');
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m)m.setAttribute('content',light?'#F3F5F8':'#121A26');
+  }
+  apply(saved||(prefersLight?'light':'dark'));
+  btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='light'?'dark':'light';
+    apply(next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

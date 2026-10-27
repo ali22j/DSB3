@@ -4,9 +4,7 @@ import streamlit as st
 import tensorflow as tf
 from PIL import Image
 
-# ---------------------------------------------------------
-# Page Configuration (No emojis)
-# ---------------------------------------------------------
+
 st.set_page_config(
     page_title="Facial Emotion Recognition",
     layout="centered"
@@ -15,15 +13,11 @@ st.set_page_config(
 st.title("Facial Emotion Recognition App")
 st.write("Take a photo using your webcam to detect facial emotions.")
 
-# ---------------------------------------------------------
-# Load Keras Model dynamically from Downloads directory
-# ---------------------------------------------------------
+
 @st.cache_resource
 def load_emotion_model():
-    # Detect the home directory path to locate Downloads dynamically across OS
     downloads_path = os.path.join(os.path.expanduser("~"), "Downloads", "emotion_model.keras")
     
-    # Fallback to current working directory if not found in Downloads
     if not os.path.exists(downloads_path):
         downloads_path = "emotion_model.keras"
 
@@ -40,14 +34,9 @@ def load_emotion_model():
 
 model = load_emotion_model()
 
-# Class labels for FER-2013 Dataset (7 standard classes)
 EMOTION_LABELS = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 
-# ---------------------------------------------------------
-# Image Processing Function
-# ---------------------------------------------------------
 def predict_emotion(image: Image.Image):
-    # Convert image to Grayscale (as model expects single channel)
     img_gray = image.convert('L')
     
     # Resize image to (48, 48) expected by model
@@ -66,14 +55,10 @@ def predict_emotion(image: Image.Image):
     
     return EMOTION_LABELS[predicted_class_idx], confidence, predictions[0]
 
-# ---------------------------------------------------------
-# Streamlit Interface - Direct Camera Input Only
-# ---------------------------------------------------------
+
 camera_file = st.camera_input("Take a picture")
 
-# ---------------------------------------------------------
-# Display Prediction Results
-# ---------------------------------------------------------
+
 if camera_file is not None:
     uploaded_image = Image.open(camera_file)
     
@@ -82,7 +67,6 @@ if camera_file is not None:
     
     st.success(f"**Predicted Emotion:** {label} ({conf*100:.2f}% confidence)")
     
-    # Display probability distribution for all 7 classes
     st.write("### Prediction Probabilities")
     for emotion, prob in zip(EMOTION_LABELS, all_probs):
         st.progress(float(prob), text=f"{emotion}: {prob*100:.2f}%")

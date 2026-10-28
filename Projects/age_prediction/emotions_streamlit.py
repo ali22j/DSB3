@@ -3,7 +3,7 @@ import numpy as np
 import streamlit as st
 import tensorflow as tf
 from PIL import Image
-from pathlib import Path
+
 
 st.set_page_config(
     page_title="Facial Emotion Recognition",
@@ -15,14 +15,18 @@ st.write("Take a photo using your webcam to detect facial emotions.")
 
 @st.cache_resource
 def load_emotion_model():
-    model_path = Path(__file__).resolve().parent / "emotion_model.keras"
+    downloads_path = os.path.join(os.path.expanduser("~"), "Downloads", "emotion_model.keras")
+    
+    if not os.path.exists(downloads_path):
+        downloads_path = "emotion_model.keras"
 
-    if not model_path.exists():
-        st.error(f"Model file not found: {model_path}")
+    if not os.path.exists(downloads_path):
+        st.error("Model file not found! Please ensure `emotion_model.keras` exists in your Downloads folder.")
         st.stop()
-
+        
     try:
-        return tf.keras.models.load_model(model_path)
+        model = tf.keras.models.load_model(downloads_path)
+        return model
     except Exception as e:
         st.error(f"Error loading the model: {e}")
         st.stop()

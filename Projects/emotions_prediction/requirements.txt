@@ -2,4 +2,4 @@ streamlit
 tensorflow
 numpy
 Pillow
-emotion_model.keras
+keras

@@ -15,10 +15,7 @@ st.write("Take a photo using your webcam to detect facial emotions.")
 
 @st.cache_resource
 def load_emotion_model():
-    downloads_path = os.path.join(os.path.expanduser("~"), "Downloads", "emotion_model.keras")
-    
-    if not os.path.exists(downloads_path):
-        downloads_path = "emotion_model.keras"
+    downloads_path = "emotion_model.keras"
 
     if not os.path.exists(downloads_path):
         st.error("Model file not found! Please ensure `emotion_model.keras` exists in your Downloads folder.")

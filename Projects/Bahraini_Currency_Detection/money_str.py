@@ -3,6 +3,7 @@ import streamlit as st
 from PIL import Image
 from ultralytics import YOLO
 from pathlib import Path
+import urllib.request
 
 st.set_page_config(page_title="Bahraini Currency Detector")
 st.title("Bahraini Currency Detector")
@@ -15,12 +16,15 @@ MODEL_PATH = BASE_DIR / "best.pt"
 @st.cache_resource
 def load_model():
     if not MODEL_PATH.exists():
+        st.info("Downloading model weights... Please wait.")
+        url = "YOUR_DIRECT_MODEL_DOWNLOAD_URL" 
+        urllib.request.urlretrieve(url, MODEL_PATH)
+
+    if not MODEL_PATH.exists():
         st.error(f"Model file not found: {MODEL_PATH}")
         st.stop()
 
     return YOLO(str(MODEL_PATH))
-
-model = load_model()
 
 def predict(image):
     results = model(image)[0]

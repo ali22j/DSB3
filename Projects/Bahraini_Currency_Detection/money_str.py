@@ -1,54 +1,45 @@
-
+import cv2
 import streamlit as st
 from PIL import Image
 from ultralytics import YOLO
 
-st.set_page_config(page_title="Bahrain Currency Detector")
+st.set_page_config(page_title="Bahraini Currency Detector")
+st.title("Bahraini Currency Detector")
+st.write("Detect Bahraini currency using YOLO!")
 
 @st.cache_resource
-def load_model(path):
-    return YOLO(path)
+def load_model():
+    return YOLO("best.pt")
 
-def main():
-    st.title("Bahrain Currency Object Detector")
-    st.write("Upload an image to detect Bahraini currency notes and coins.")
+model = load_model()
 
-    model_path = st.sidebar.text_input("Model Path", "best.pt")
-    confidence = st.sidebar.slider("Confidence Threshold", 0.1, 1.0, 0.25, 0.05)
+def predict(image):
+    results = model(image)[0]
+    st.image(cv2.cvtColor(results.plot(), cv2.COLOR_BGR2RGB),
+             caption="Prediction Result")
 
-    try:
-        model = load_model(model_path)
-    except Exception as e:
-        st.error(f"Could not load model: {e}")
-        return
+    boxes = results.boxes
+    if len(boxes):
+        st.success(f"Detected {len(boxes)} currency object(s)!")
+        for box in boxes:
+            name = model.names[int(box.cls[0])]
+            conf = float(box.conf[0])
+            st.write(f"- **{name}** (Confidence: {conf:.2f})")
+    else:
+        st.warning("No currency detected. Try another image.")
 
-    file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
+mode = st.selectbox("Choose Input Mode", ["Live Webcam", "Upload Image"])
 
-    if file:
-        image = Image.open(file)
-        results = model.predict(image, conf=confidence)
-        result = results[0]
+if mode == "Live Webcam":
+    image = st.camera_input("Take a picture of the currency")
+    if image:
+        predict(Image.open(image))
 
-        col1, col2 = st.columns(2)
-
-        with col1:
-            st.subheader("Original Image")
-            st.image(image, use_container_width=True)
-
-        with col2:
-            st.subheader("Detection Results")
-            st.image(result.plot()[:, :, ::-1], use_container_width=True)
-
-        st.subheader("Detection Summary")
-
-        if len(result.boxes):
-            for i, box in enumerate(result.boxes):
-                name = model.names[int(box.cls[0])]
-                conf = float(box.conf[0])
-                st.write(f"**Object {i+1}:** {name} ({conf:.2f})")
-        else:
-            st.info("No objects detected.")
-
-if __name__ == "__main__":
-    main()
-
+else:
+    image = st.file_uploader("Upload currency image", type=["jpg", "jpeg", "png"])
+    if image:
+        img = Image.open(image)
+        st.image(img, caption="Uploaded Image")
+        if st.button("Predict Currency"):
+            with st.spinner("Analyzing..."):
+                predict(img)

@@ -2,14 +2,24 @@ import cv2
 import streamlit as st
 from PIL import Image
 from ultralytics import YOLO
+from pathlib import Path
 
 st.set_page_config(page_title="Bahraini Currency Detector")
 st.title("Bahraini Currency Detector")
 st.write("Detect Bahraini currency using YOLO!")
 
 @st.cache_resource
+
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "best.pt"
+
+@st.cache_resource
 def load_model():
-    return YOLO("best.pt")
+    if not MODEL_PATH.exists():
+        st.error(f"Model file not found: {MODEL_PATH}")
+        st.stop()
+
+    return YOLO(str(MODEL_PATH))
 
 model = load_model()
 

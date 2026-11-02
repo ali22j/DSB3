@@ -14,6 +14,10 @@ BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "best.pt"
 
 @st.cache_resource
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "best.pt"
+
+@st.cache_resource
 def load_model():
     if not MODEL_PATH.exists():
         st.error(f"Model file not found: {MODEL_PATH}")

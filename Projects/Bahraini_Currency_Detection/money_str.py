@@ -8,12 +8,7 @@ st.set_page_config(page_title="Bahraini Currency Detector")
 st.title("Bahraini Currency Detector")
 st.write("Detect Bahraini currency using YOLO!")
 
-@st.cache_resource
-
-BASE_DIR = Path(__file__).resolve().parent
-MODEL_PATH = BASE_DIR / "best.pt"
-
-@st.cache_resource
+# Define paths outside of functions
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "best.pt"
 

@@ -1,14 +1,14 @@
-Bahraini Currency Detection
+# Bahraini Currency Detection
 
 An AI-powered Computer Vision project designed to detect and recognize Bahraini banknotes using image processing and machine learning techniques.
 
-Project Overview
+## Project Overview
 
 Bahraini Currency Detection aims to automate the identification of Bahraini banknotes through computer vision.
 
 The project explores how intelligent image analysis can be applied to local currency recognition, providing a foundation for automated currency identification systems.
 
-🎯 Project Objectives
+## 🎯 Project Objectives
 Detect Bahraini banknotes from images.
 Recognize and classify different banknote denominations.
 Explore practical applications of Computer Vision and Artificial Intelligence.
@@ -25,7 +25,7 @@ Jupyter Notebook
 
 Only retain the technologies that are actually used in the project.
 
-Project Workflow
+## Project Workflow
 
 The general currency detection workflow consists of:
 
@@ -36,7 +36,7 @@ Currency Detection: Apply the implemented detection approach.
 Recognition: Identify the detected currency denomination.
 Output: Display the detection results.
 
-Applications
+## Applications
 Automated Bahraini currency recognition.
 Computer vision research and experimentation.
 Potential assistive technologies for visually impaired individuals.

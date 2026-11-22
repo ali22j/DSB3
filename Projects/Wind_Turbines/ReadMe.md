@@ -1,5 +1,5 @@
-🌬️ Wind Turbines Data Analysis
-📌 Project Overview
+# Wind Turbines Data Analysis
+## Project Overview
 
 The Wind Turbines Data Analysis project focuses on exploring and analyzing wind turbine data across the United States to identify trends, understand turbine characteristics, and investigate the distribution of wind energy infrastructure.
 
@@ -7,7 +7,7 @@ The project aims to provide useful insights into wind farm development, installe
 
 The analysis can help support better decision-making regarding wind farm investments and site selection by understanding historical patterns and identifying leading regions in wind energy production.
 
-🎯 Project Objectives
+## Project Objectives
 Analyze the geographical distribution of wind turbines across U.S. states and counties.
 Identify states with the highest total installed wind turbine capacity.
 Explore the development of wind turbine capacity over the years.
@@ -15,7 +15,7 @@ Investigate changes in turbine hub height and rotor diameter.
 Identify leading counties in major wind energy states, particularly Texas.
 Explore wind turbine manufacturers and their characteristics.
 Extract meaningful insights from historical wind turbine data.
-📊 Dataset Description
+## Dataset Description
 
 The project uses a wind turbine dataset containing 70,808 records and 27 columns.
 
